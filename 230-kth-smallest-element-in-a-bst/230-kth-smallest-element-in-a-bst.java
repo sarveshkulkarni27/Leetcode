@@ -25,7 +25,7 @@ class Solution {
             return count;
         }
         if(root == null){
-        return count;
+            return count;
         }
         count = getKthSmallest(root.left, k, count);
         count++;
