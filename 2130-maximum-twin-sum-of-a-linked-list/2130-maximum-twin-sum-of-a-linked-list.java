@@ -18,10 +18,8 @@ class Solution {
             head = head.next;
         }
         
-        // System.out.println(twinList.size());
         
         for(int index = 0; index < twinList.size() / 2; index++){
-            // System.out.println(twinList.get(index) + " " + twinList.get(twinList.size() - index - 1));
             maxTwinSum = Math.max(maxTwinSum, twinList.get(index) + twinList.get(twinList.size() - index - 1));
         }
         return maxTwinSum;
