@@ -13,11 +13,6 @@ class Solution {
             groupMap.put(groupSizes[groupSize], groupList);
         }
         
-        System.out.println(min);
-        System.out.println(max);
-        
-        System.out.println(groupMap);
-        
         List<List<Integer>> groups = new ArrayList<>();
         
         for(int groupSize = min; groupSize <= max; groupSize++){
@@ -33,7 +28,6 @@ class Solution {
                     currentGroup = new ArrayList<>();
                     currentGroup.add(currentList.get(index));
                 }else{
-                    System.out.println(currentList.get(index));
                     currentGroup.add(currentList.get(index));
                 }
             }
