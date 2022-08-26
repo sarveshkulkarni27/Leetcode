@@ -25,30 +25,6 @@ class Solution {
             
         }
         
-        
-        
-//         for(int groupSize = min; groupSize <= max; groupSize++){
-            
-//             List<Integer> currentGroup = new ArrayList<>();
-//             List<Integer> currentList = new ArrayList<>();
-//             if(groupMap.containsKey(groupSize)){
-//                 currentList = groupMap.get(groupSize);
-//             }
-//             for(int index = 0; index < currentList.size(); index++){
-//                 if(currentGroup.size() == groupSize){
-//                     groups.add(currentGroup);
-//                     currentGroup = new ArrayList<>();
-//                     currentGroup.add(currentList.get(index));
-//                 }else{
-//                     currentGroup.add(currentList.get(index));
-//                 }
-//             }
-//             if(currentGroup.size() == groupSize){
-//                 groups.add(currentGroup);
-//                 currentGroup = new ArrayList<>();
-//             }            
-//         }
-        
         return groups;
     }
 }
