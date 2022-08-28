@@ -37,7 +37,6 @@ class Solution {
                     }
                 }
                 counter++;
-                // System.out.println(finalArray[index]);
             }
             index++;
         }
