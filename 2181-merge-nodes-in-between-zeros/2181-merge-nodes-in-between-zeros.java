@@ -19,7 +19,6 @@ class Solution {
             
             if(head.val == 0){
                 if(currentSum != 0){
-                    System.out.println(currentSum);
                     node.next = new ListNode(currentSum);
                     node = node.next;
                     currentSum = 0;
