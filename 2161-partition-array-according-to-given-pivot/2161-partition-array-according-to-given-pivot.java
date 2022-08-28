@@ -16,9 +16,6 @@ class Solution {
             }          
         }
         
-        // System.out.println(smallValues);
-        // System.out.println(largeValues);
-        
         int checkEqual = equalValues;
         for(int index = 0; index < nums.length; index++){
             if(index < smallValues.size()){
@@ -26,7 +23,6 @@ class Solution {
             }else if(equalValues-- > 0){
                 nums[index] = pivot;
             }else{
-                // System.out.println(index + " " + smallValues.size() + " " + checkEqual);
                 nums[index] = largeValues.get(index - (smallValues.size() + checkEqual));
             }
         }
