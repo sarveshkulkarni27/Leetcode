@@ -18,7 +18,7 @@ class Solution {
         List<Integer> nodes = new ArrayList<>();
         traverseTree(root, nodes);
         
-        Collections.sort(nodes);
+        // Collections.sort(nodes);
         
         return generateBST(nodes, 0, nodes.size() - 1, new TreeNode());
     }
@@ -27,8 +27,8 @@ class Solution {
         if(root == null){
             return;
         }
-        nodes.add(root.val);
         traverseTree(root.left, nodes);
+        nodes.add(root.val);
         traverseTree(root.right, nodes);
     }
     
