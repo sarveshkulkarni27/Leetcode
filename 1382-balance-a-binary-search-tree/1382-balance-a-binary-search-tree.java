@@ -20,9 +20,7 @@ class Solution {
         
         Collections.sort(nodes);
         
-        // TreeNode balancedTree = new TreeNode();
         return generateBST(nodes, 0, nodes.size() - 1, new TreeNode());
-        // return balancedTree;
     }
     
     public void traverseTree(TreeNode root, List<Integer> nodes){
