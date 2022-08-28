@@ -17,9 +17,7 @@ class Solution {
     public TreeNode balanceBST(TreeNode root) {
         List<Integer> nodes = new ArrayList<>();
         traverseTree(root, nodes);
-        
-        // Collections.sort(nodes);
-        
+                
         return generateBST(nodes, 0, nodes.size() - 1, new TreeNode());
     }
     
