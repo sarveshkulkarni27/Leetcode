@@ -7,7 +7,6 @@ class Solution {
             lastPosition.put(s.charAt(index), index);
         }
         
-        System.out.println(lastPosition);
         int currentMax = -1;
         
         for(int index = 0; index < s.length(); index++){
@@ -25,7 +24,6 @@ class Solution {
                 currentMax = Math.max(currentMax, lastPosition.get(s.charAt(index)));
             }
         }
-        System.out.println(partions);
         if(partions.size() > 1){
             int temp = partions.get(0);
             for(int index = 1; index < partions.size(); index++){
