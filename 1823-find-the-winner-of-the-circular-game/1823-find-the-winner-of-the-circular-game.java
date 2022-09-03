@@ -14,14 +14,7 @@ class Solution {
         node.next = temp;
         node = node.next;
         node.prev = prevNode;
-        // System.out.println(node.val);
-        // int counter = 1;
-        // while(counter < 8){
-        //     System.out.println(node.val);
-        //     node = node.next;
-        //     counter++;
-        // }
-        // return 1;
+
         int currDiff = k;
         while(true){
             if(node.val == node.next.val){
