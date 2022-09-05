@@ -3,17 +3,10 @@ class Solution {
         StringBuilder sb = new StringBuilder();
         
         for(char ch : s.toCharArray()){
-            boolean match = false;
-            if(sb.length() > 0 && ch == ')'){
-                for(int index = sb.length() - 1; index >= 0; index--){
-                    if(sb.charAt(index) == '('){
-                        sb.deleteCharAt(index);
-                        match = true;
-                        break;
-                    }
-                }
+            if(sb.length() > 0 && ch == ')' && sb.charAt(sb.length() - 1) == '('){
+                sb.deleteCharAt(sb.length() - 1);
             }
-            if(!match){
+            else{
                 sb.append(ch);
             }
         }
