@@ -23,24 +23,11 @@ class Solution {
                 }
             }
         }
-        
-        System.out.println(stack1);
-        System.out.println(stack2);
 
         if(k <= stack1.size()){
-            // int diff = stack1.size() - k;
-            // int returnVal = 0;
-            // while(diff-- >= 0){
-            //     returnVal = stack1.pop();
-            // }
             return stack1.get(k - 1);
         }else if(k <= stack1.size() + stack2.size()){
             int diff = k - stack1.size();
-            // int returnVal = 0;
-            // while(diff-- > 0){
-            //     returnVal = stack2.pop();
-            // }
-            System.out.println(diff);
             return stack2.get(stack2.size() - diff);            
         }else{
             return -1;
