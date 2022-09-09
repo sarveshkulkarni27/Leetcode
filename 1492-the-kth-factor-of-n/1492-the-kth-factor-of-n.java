@@ -1,7 +1,7 @@
 class Solution {
     public int kthFactor(int n, int k) {
-        Stack<Integer> stack1 = new Stack<Integer>();
-        Stack<Integer> stack2 = new Stack<Integer>();
+        List<Integer> stack1 = new ArrayList<Integer>();
+        List<Integer> stack2 = new ArrayList<Integer>();
         Set<Integer> visited = new HashSet<>();
         for(int factor = 1; factor <= n; factor++){
             if(n % factor == 0){
@@ -13,9 +13,9 @@ class Solution {
                 }
                 
                 visited.add(val);
-                stack1.push(factor);
+                stack1.add(factor);
                 if(factor != val){
-                    stack2.push(val);
+                    stack2.add(val);
                 }
                 
                 if(stack1.size() == k || factor == val){
@@ -23,21 +23,25 @@ class Solution {
                 }
             }
         }
+        
+        System.out.println(stack1);
+        System.out.println(stack2);
 
         if(k <= stack1.size()){
-            int diff = stack1.size() - k;
-            int returnVal = 0;
-            while(diff-- >= 0){
-                returnVal = stack1.pop();
-            }
-            return returnVal;
+            // int diff = stack1.size() - k;
+            // int returnVal = 0;
+            // while(diff-- >= 0){
+            //     returnVal = stack1.pop();
+            // }
+            return stack1.get(k - 1);
         }else if(k <= stack1.size() + stack2.size()){
             int diff = k - stack1.size();
-            int returnVal = 0;
-            while(diff-- > 0){
-                returnVal = stack2.pop();
-            }
-            return returnVal;            
+            // int returnVal = 0;
+            // while(diff-- > 0){
+            //     returnVal = stack2.pop();
+            // }
+            System.out.println(diff);
+            return stack2.get(stack2.size() - diff);            
         }else{
             return -1;
         }
