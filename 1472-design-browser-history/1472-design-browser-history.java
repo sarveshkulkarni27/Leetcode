@@ -10,20 +10,17 @@ class BrowserHistory {
     public void visit(String url) {
         if(history.size() > page){
             history.subList(page + 1, history.size()).clear();        
-        }
-        
+        }      
         history.add(url);
         page++;
     }
     
     public String back(int steps) {
-        System.out.println("Back: " + page + " " + steps + " " + history);
         page = steps > page ? 0 : page - steps;
         return history.get(page);
     }
     
     public String forward(int steps) {
-        System.out.println("Forward: " + page + " " + steps + " " + history);
         page = (page + steps) >= history.size() ? history.size() - 1 : (page + steps);
         return history.get(page);
     }
