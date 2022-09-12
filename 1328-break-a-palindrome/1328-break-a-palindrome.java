@@ -3,19 +3,12 @@ class Solution {
         if(palindrome.length() == 1){
             return "";
         }
-        int maxChangeIndex = 0;
-        boolean flag = palindrome.length() % 2 == 1;
-        for(int index = 0; index < palindrome.length(); index++){
-            if(flag && index == palindrome.length() / 2){
-                continue;
-            }
+        for(int index = 0; index < palindrome.length() / 2; index++){
             int val = palindrome.charAt(index) - 'a';
             if(val > 0){
                 return palindrome.substring(0, index) + 'a' + palindrome.substring(index + 1, palindrome.length());
-            }else{
-                maxChangeIndex = index;
             }
         }
-        return palindrome.substring(0, maxChangeIndex) + 'b' + palindrome.substring(maxChangeIndex + 1, palindrome.length());
+        return palindrome.substring(0, palindrome.length() - 1) + 'b';
     }
 }
