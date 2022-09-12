@@ -6,17 +6,17 @@ class Solution {
             countMap.put(num, countMap.getOrDefault(num, 0) + 1);
         }
         
-        PriorityQueue<int[]> uniqueElements = new PriorityQueue<int[]>((a,b) -> a[1] - b[1]);
+        PriorityQueue<Integer> uniqueElements = new PriorityQueue<Integer>();
         
-        for(int key : countMap.keySet()){
-            uniqueElements.add(new int[]{key, countMap.get(key)});
+        for(int val : countMap.values()){
+            uniqueElements.add(val);
         }
         
         while(k > 0){
-            int[] currentArray = uniqueElements.peek();
-            if(currentArray[1] <= k){
+            int currentvalue = uniqueElements.peek();
+            if(currentvalue <= k){
                 uniqueElements.poll();
-                k -= currentArray[1];
+                k -= currentvalue;
             }else{
                 break;
             }
