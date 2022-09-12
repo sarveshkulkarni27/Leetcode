@@ -4,8 +4,9 @@ class Solution {
             return "";
         }
         int maxChangeIndex = 0;
+        boolean flag = palindrome.length() % 2 == 1;
         for(int index = 0; index < palindrome.length(); index++){
-            if(palindrome.length() % 2 == 1 && index == palindrome.length() / 2){
+            if(flag && index == palindrome.length() / 2){
                 continue;
             }
             int val = palindrome.charAt(index) - 'a';
