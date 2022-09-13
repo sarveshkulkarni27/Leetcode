@@ -5,7 +5,6 @@ class Solution {
         int prevEnd = intervals[0][1];
         int counter = 0;
         for(int index = 1; index < intervals.length; index++){
-            System.out.println(Arrays.toString(intervals[index]));
             if(intervals[index][0] < prevEnd){
                 counter++;
             }else{
