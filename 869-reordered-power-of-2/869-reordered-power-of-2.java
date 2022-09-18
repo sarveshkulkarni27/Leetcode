@@ -1,0 +1,50 @@
+class Solution {
+    public boolean reorderedPowerOf2(int n) {
+        String integerLength = "" + n;
+        int length = integerLength.length();
+        char[] characterArray = integerLength.toCharArray();
+        
+        Map<Character, Integer> countMap = new HashMap<>();
+        for(char ch : characterArray){
+            countMap.put(ch, countMap.getOrDefault(ch, 0) + 1);
+        }
+        
+        System.out.println(countMap);
+        int size = 0;
+        int number = 1;
+        while(true){
+            String currNumber = "" + number;
+            if(currNumber.length() == length){
+                Map<Character, Integer> currMap = new HashMap<>();
+                for(char ch : currNumber.toCharArray()){
+                    currMap.put(ch, currMap.getOrDefault(ch, 0) + 1);
+                }
+                System.out.println(currNumber);
+                System.out.println(currMap);
+                
+                boolean flag = true;
+                // if(countMap.size() != currMap.size()){
+                //     return false;
+                // }else{
+                    for(char ch : countMap.keySet()){
+                        if(!currMap.containsKey(ch)){
+                            flag = false;
+                            break;                           
+                        }
+                        else if(currMap.containsKey(ch) && countMap.get(ch) != currMap.get(ch)){
+                            flag = false;
+                            break;
+                        }
+                    }
+                // }
+                
+                if(flag){
+                    return true;
+                }
+            }else if(currNumber.length() > length){
+                return false;
+            }
+            number *= 2;
+        }
+    }
+}
