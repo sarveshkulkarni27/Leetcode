@@ -2,10 +2,9 @@ class Solution {
     public boolean reorderedPowerOf2(int n) {
         String integerLength = "" + n;
         int length = integerLength.length();
-        char[] characterArray = integerLength.toCharArray();
         
         Map<Character, Integer> countMap = new HashMap<>();
-        for(char ch : characterArray){
+        for(char ch : integerLength.toCharArray()){
             countMap.put(ch, countMap.getOrDefault(ch, 0) + 1);
         }
         int size = 0;
