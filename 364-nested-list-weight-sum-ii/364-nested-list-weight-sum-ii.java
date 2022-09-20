@@ -36,9 +36,7 @@ class Solution {
         getDepthList(nestedList, currentList, weightList, depth);
         int sum = 0;
         for(int pos = 0; pos < currentList.size(); pos++){
-            // System.out.println(maxWeight + " " + weightList.get(pos) + " " + currentList.get(pos));
             sum += (maxWeight - weightList.get(pos) + 1) * currentList.get(pos);
-            // System.out.println((maxWeight - weightList.get(pos) + 1) * currentList.get(pos));
         }
         
         return sum;
