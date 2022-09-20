@@ -25,7 +25,6 @@ class Solution {
                         newString = newString.deleteCharAt(index);
                         getDFS(newString, count - 1, min, wordLengthMap, 1);
                     }                     
-                        // getDFS(new StringBuilder(word), max - 1, min, wordLengthMap, 1);
                 }
                 
             }
@@ -34,12 +33,8 @@ class Solution {
     }
     
     public void getDFS(StringBuilder word, int current, int min, Map<Integer, Set<String>> wordLengthMap, int count){
-        // System.out.println(word.toString() + " " + current + " " + min + " " + wordLengthMap + " " + count);
         maxChainLength = Math.max(maxChainLength, count); 
-        if(current < min){
-            return;
-        }
-        if((count + current - min) < maxChainLength){
+        if(current < min || (count + current - min) < maxChainLength){
             return;
         }
         if(wordLengthMap.containsKey(current)){
