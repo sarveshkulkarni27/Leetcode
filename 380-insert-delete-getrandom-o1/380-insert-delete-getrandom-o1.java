@@ -26,11 +26,6 @@ class RandomizedSet {
     }
     
     public int getRandom() {
-        // Iterator<Integer> value = numberSet.iterator();
-        // while(value.hasNext()){
-        //     return value.next();
-        // }
-        // return 0;
         int random = (int) ((Math.random() * (numberList.size() - 0)) + 0);
         return numberList.get(random);
     }
