@@ -28,7 +28,6 @@ class Solution {
     }
     
     public int pickIndex() {
-        //int random = (int) ((Math.random() * (normalizedList.size() - 0)) + 0);
         int random = (int) (Math.random() * (normalizedList.get(normalizedList.size() - 1)));
         return getBinarySearch(0, normalizedList.size() - 1, normalizedList, random);
     }
