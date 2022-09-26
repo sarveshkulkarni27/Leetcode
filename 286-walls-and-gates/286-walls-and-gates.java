@@ -20,19 +20,12 @@ class Solution {
             int[] currentCoordinate = coordinateQueue.poll();
             for(int[] neighbor : neighbors){
                 int newRow = currentCoordinate[0] + neighbor[0];
-                int newColumn = currentCoordinate[1] + neighbor[1];
-				// if(newRow<0 || newRow>=rooms.length || newColumn<0 || newColumn>=rooms[0].length)
-				// 	continue;                
+                int newColumn = currentCoordinate[1] + neighbor[1];              
                 if(newRow >= 0 && newRow < rooms.length && newColumn >= 0 && newColumn < rooms[0].length){
-                    // if(rooms[newRow][newColumn] == Integer.MAX_VALUE){
-                    //     rooms[newRow][newRow] = rooms[currentCoordinate[0]][currentCoordinate[1]] + 1;
-                    //     coordinateQueue.add(new int[]{newRow, newColumn});
-                    //     System.out.println(newRow + " " + newColumn);
-                    // }
-                    if(rooms[newRow][newColumn] == 2147483647) {
+                    if(rooms[newRow][newColumn] == Integer.MAX_VALUE){
                         rooms[newRow][newColumn] = rooms[currentCoordinate[0]][currentCoordinate[1]] + 1;
                         coordinateQueue.add(new int[]{newRow, newColumn});
-                    }                    
+                    }                  
                 }
             }
         }
