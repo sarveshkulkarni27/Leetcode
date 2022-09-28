@@ -23,13 +23,28 @@ class Node {
 
 class Solution {
     public Node connect(Node root) {
-        if(root == null){
-            return null;
-        }
-        Queue<Node> treeQueue = new LinkedList<Node>();
-        treeQueue.add(root);
-        getBFS(root, treeQueue);
+        // if(root == null){
+        //     return null;
+        // }
+        // Queue<Node> treeQueue = new LinkedList<Node>();
+        // treeQueue.add(root);
+        // getBFS(root, treeQueue);
+        getDFS(root);
         return root;
+    }
+    
+    public void getDFS(Node root){
+        if(root == null){
+            return;
+        }
+        if(root.left != null){
+            root.left.next = root.right;
+        }
+        if(root.next != null && root.next.left != null){
+            root.right.next = root.next.left;
+        }
+        getDFS(root.left);
+        getDFS(root.right);
     }
     
     public void getBFS(Node root, Queue<Node> treeQueue){
