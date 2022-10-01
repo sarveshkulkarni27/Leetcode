@@ -1,14 +1,15 @@
 class Solution {
     public int[] dailyTemperatures(int[] temperatures) {
-        Stack<int[]> previousTemperatures = new Stack<int[]>();
+        Stack<Integer> previousTemperatures = new Stack<Integer>();
         int[] answer = new int[temperatures.length];
-        
-        for(int index = 0; index < temperatures.length; index++){
-            while(!previousTemperatures.isEmpty() && previousTemperatures.peek()[0] < temperatures[index]){
-                int position =  previousTemperatures.pop()[1];
-                answer[position] = index - position;
+        for(int index = temperatures.length - 1; index >= 0; index--){
+            while(!previousTemperatures.isEmpty() && temperatures[previousTemperatures.peek()] <= temperatures[index]){
+                previousTemperatures.pop();
             }
-            previousTemperatures.push(new int[]{temperatures[index], index});
+            if(!previousTemperatures.isEmpty()){
+                answer[index] = previousTemperatures.peek() - index;
+            }
+            previousTemperatures.push(index);        
         }
         return answer;
     }
