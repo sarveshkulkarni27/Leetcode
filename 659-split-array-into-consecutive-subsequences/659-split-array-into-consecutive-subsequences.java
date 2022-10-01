@@ -22,7 +22,7 @@ class Solution {
                 availabilityMap.put(num + 2, availabilityMap.getOrDefault(num + 2, 0) - 1);
                 
                 vacancyMap.put(num + 3, vacancyMap.getOrDefault(num + 3, 0) + 1);
-            }else{
+            }else if(availabilityMap.getOrDefault(num, 0) > 0 && (availabilityMap.getOrDefault(num + 1, 0) <= 0 || availabilityMap.getOrDefault(num + 2, 0) <= 0)){
                 return false;
             }
         }
