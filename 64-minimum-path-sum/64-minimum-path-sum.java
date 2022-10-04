@@ -1,14 +1,5 @@
 class Solution {
     public int minPathSum(int[][] grid) {
-        if(grid.length == 1 && grid[0].length == 1){
-            return grid[0][0];
-        }
-        // if(grid.length == 1){
-        //     return grid[0][grid[0].length - 1];
-        // }
-        // if(grid[0].length == 1){
-        //     return grid[grid.length - 1][0];
-        // }
         for(int row = 0; row < grid.length; row++){
             for(int column = 0; column < grid[row].length; column++){
                 if(row == 0 && column == 0){
