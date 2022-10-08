@@ -10,11 +10,16 @@ class Solution {
             return allCombinations;
         }        
         for(int number = currentStart; number <= 9; number++){
-            if(!currentCombination.contains(number) && total + number <= n){
-                currentCombination.add(number);
-                getCombinations(allCombinations, currentCombination, k, n, total + number, number + 1);
-                currentCombination.remove(currentCombination.size() - 1);
+            if(total + number <= n){
+                 if(!currentCombination.contains(number)){
+                    currentCombination.add(number);
+                    getCombinations(allCombinations, currentCombination, k, n, total + number, number + 1);
+                    currentCombination.remove(currentCombination.size() - 1);
+                }               
+            }else{
+                break;
             }
+
         }
         return allCombinations;
     }
