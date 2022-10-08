@@ -13,7 +13,6 @@ class Solution {
 
         
         int[][] neighbors = new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
-        int minHeight = 0;
         int returnVal = Integer.MAX_VALUE;
         while(!dijkstra.isEmpty()){
             int[] currentNode = dijkstra.poll();             
@@ -24,16 +23,14 @@ class Solution {
                     continue;
                 }
                 if(newX >= 0 && newX < heights.length && newY >= 0 && newY < heights[0].length){
-                    // visited[newX][newY] = true;
                     int absoluteDifference = Math.abs(heights[currentNode[0]][currentNode[1]] - heights[newX][newY]);
                     int val = Math.max(absoluteDifference, currentNode[2]);
                     if(val < distance[newX][newY]){
                         distance[newX][newY] = val;
                         dijkstra.add(new int[]{newX, newY, val});
-                        minHeight = val;
-                        // System.out.println(newX + " " + newY + " " + minHeight);
                         if(newX == heights.length - 1 && newY == heights[0].length - 1){
                             returnVal = val;
+                            break;
                         }                        
                     }
                     
