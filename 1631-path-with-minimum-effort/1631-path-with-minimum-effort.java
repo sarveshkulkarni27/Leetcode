@@ -1,7 +1,5 @@
 class Solution {
     public int minimumEffortPath(int[][] heights) {
-        boolean[][] visited = new boolean[heights.length][heights[0].length];
-        // visited[0][0] = true;
         PriorityQueue<int[]> dijkstra = new PriorityQueue<int[]>((a, b) -> a[2] - b[2]);
         dijkstra.add(new int[]{0, 0, 0});
         int[][] distance = new int[heights.length][heights[0].length];
