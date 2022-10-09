@@ -1,13 +1,10 @@
 class SnapshotArray {
 
     Map<Integer, Map<Integer, Integer>> snapshotMap;
-    int[] array;
     Map<Integer, Integer> arrayMap;
-    int length;
     int totalSnaps = 0;
     public SnapshotArray(int length) {
         this.snapshotMap = new HashMap<>();
-        this.length = length;
         this.arrayMap = new HashMap<>();
     }
     
