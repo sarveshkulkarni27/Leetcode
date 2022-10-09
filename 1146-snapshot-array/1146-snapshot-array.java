@@ -13,11 +13,11 @@ class SnapshotArray {
     }
     
     public int snap() {
-        Map<Integer, Integer> tempMap = new HashMap<>(arrayMap);
+        // Map<Integer, Integer> tempMap = new HashMap<>(arrayMap);
         // for(int key : arrayMap.keySet()){
         //     tempMap.put(key, arrayMap.get(key));
         // }
-        snapshotMap.put(totalSnaps, tempMap);
+        snapshotMap.put(totalSnaps, new HashMap<>(arrayMap));
         return totalSnaps++;
     }
     
