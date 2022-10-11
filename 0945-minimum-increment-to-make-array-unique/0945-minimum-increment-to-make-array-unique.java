@@ -17,14 +17,12 @@ class Solution {
             }
         }
         
-        System.out.println(frequencyMap + " " + val);
         int counter = 0;
         int total = 0;
         int lastVal = -1;
         for(int number = min; number <= max; number++){
             if(frequencyMap.containsKey(number) && frequencyMap.get(number) > 1){
                 int value = frequencyMap.get(number);
-                System.out.println(number + " Number " + value);
                 while(value > 1 && counter < val.size()){
                     if(val.get(counter) <= number){
                         counter++;
@@ -32,7 +30,6 @@ class Solution {
                     }
                     value--;
                     total += val.get(counter++) - number;
-                    // System.out.println(total + " " + counter);
                     if(counter == val.size()){
                         lastVal = max + 1;
                     }
@@ -40,7 +37,6 @@ class Solution {
                 if(lastVal == -1 && val.size() == 0){
                     lastVal = max + 1;
                 }
-                System.out.println(lastVal);
                 while(value > 1){
                     if(lastVal <= number){
                         lastVal++;
@@ -48,7 +44,6 @@ class Solution {
                     }
                     value--;
                     total += lastVal++ - number;
-                    // System.out.println(total + " Val " + lastVal);
                 }
             }
         }
