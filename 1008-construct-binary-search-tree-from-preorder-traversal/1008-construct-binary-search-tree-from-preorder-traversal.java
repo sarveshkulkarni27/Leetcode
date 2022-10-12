@@ -16,26 +16,30 @@
 class Solution {
     public TreeNode bstFromPreorder(int[] preorder) {
         TreeNode root = new TreeNode(preorder[0]);
-        
-        for(int index = 1; index < preorder.length; index++){
-            formBst(root, preorder[index]);
+        if(preorder.length > 1){
+            getBST(preorder, root);
         }
-        
         return root;
     }
     
-    public void formBst(TreeNode root, int value){
-        if(value <= root.val){
-            if(root.left != null){
-                formBst(root.left, value);
+    public void getBST(int[] preorder, TreeNode root){
+        for(int index = 1; index < preorder.length; index++){
+            insertNode(preorder[index], root);
+        }
+    }
+    
+    public void insertNode(int target, TreeNode root){
+        if(target <= root.val){
+            if(root.left == null){
+                root.left = new TreeNode(target);
             }else{
-                root.left = new TreeNode(value);
+                insertNode(target, root.left);
             }
         }else{
-            if(root.right != null){
-                formBst(root.right, value);
+            if(root.right == null){
+                root.right = new TreeNode(target);
             }else{
-                root.right = new TreeNode(value);
+                insertNode(target, root.right);
             }            
         }
     }
